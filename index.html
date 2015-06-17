@@ -1,0 +1,71 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>JavaScript-Таймеры</title>
+    <meta charset='utf-8' />
+
+    <style>
+        body {
+            background-color: gray;
+            color: white;
+            text-align: center;
+        }
+        #APELSERG_InputStart {
+            font-size:150%;
+        }
+        #APELSERG_InputMsec {
+            width: 60px;
+        }
+    </style>
+
+    <script src="toolbox-jstimer-2-setinteval-main.js"></script>
+    <script src="toolbox-jstimer-2-setinteval-model.js"></script>
+    <script src="toolbox-jstimer-2-setinteval-canva.js"></script>
+
+</head>
+
+<body onload="APELSERG.MAIN.OnLoad()">
+    JavaScript-Таймеры (конкурентный setInterval)
+    <input type='button' id='APELSERG_InputStart' value='СТАРТ' onclick='APELSERG.MAIN.Start();' />
+    <hr />
+    Таймер:
+    <select id='APELSERG_SelectTypeTimer'>
+        <option value='ST'>setTimeout</option>
+        <option value='SI'>setInterval</option>
+        <option value='AF'>requestAnimationFrame (RAF)</option>
+        <option value='STAF'>setTimeout+RAF</option>
+        <option value='SIAF'>setInterval+RAF</option>
+    </select>
+    мс:
+    <input type="number" id="APELSERG_InputMsec" min="0" max="1000" step="10" value="0">
+    Видеонагрузка:
+    <select id='APELSERG_SelectTypePaint'>
+        <option value='0'>Простая</option>
+        <option value='1'>Сложная</option>
+    </select>
+    Псевдонагрузка (циклов):
+    <select id='APELSERG_SelectVirtCalc'>
+        <option value='0'>Нет</option>
+        <option value='1'>1 000 000</option>
+        <option value='5'>5 000 000</option>
+        <option value='10'>10 000 000</option>
+        <option value='50'>50 000 000</option>
+        <option value='100'>100 000 000</option>
+        <option value='500'>500 000 000</option>
+        <option value='1000'>1 000 000 000</option>
+    </select>
+    Значение (px):
+    <select id='APELSERG_SelectResultSizePx'>
+        <option value='1'>1</option>
+        <option value='2'>2</option>
+        <option value='3'>3</option>
+        <option value='4'>4</option>
+    </select>
+    <hr />
+    <div id='APELSERG_DivCanvas'>
+      <canvas id='APELSERG_Canvas'></canvas>
+    </div>
+    <hr />
+    apelserg 2015
+</body>
+</html>
